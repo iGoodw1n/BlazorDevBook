@@ -1,5 +1,5 @@
 ﻿using Data.Models.Interfaces;
-using Data.Models.Models;
+using Data.Models;
 using Microsoft.Extensions.Options;
 using System.Text.Json;
 

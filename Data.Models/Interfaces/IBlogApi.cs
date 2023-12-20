@@ -1,6 +1,4 @@
-﻿using Data.Models.Models;
-
-namespace Data.Models.Interfaces;
+﻿namespace Data.Models.Interfaces;
 
 public interface IBlogApi
 {
