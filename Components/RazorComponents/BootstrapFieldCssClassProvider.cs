@@ -10,7 +10,7 @@ namespace Components.RazorComponents
             var isModified = editContext.IsModified(fieldIdentifier);
             return (isModified, isValid) switch
             {
-                (true, true) => "form-contorl modified is-valid",
+                (true, true) => "form-control modified is-valid",
                 (true, false) => "form-control modified is-invalid",
                 (false, true) => "form-control",
                 (false, false) => "form-control"

@@ -3,7 +3,7 @@
 @inject IBlogApi _api
 <h3>Categories</h3>
 
-<EditForm OnValidSubmit="Save" Model="Item">
+<EditForm OnValidSubmit="@Save" Model="Item">
     <DataAnnotationsValidator />
     <CustomCssClassProvider ProviderType="BootstrapFieldCssClassProvider" />
     <InputText @bind-Value="@Item.Name" />
