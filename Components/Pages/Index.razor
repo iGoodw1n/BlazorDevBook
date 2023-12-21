@@ -15,11 +15,11 @@
     {
         if (totalBlogPosts == 0)
         {
-            totalBlogPosts = await _api.GetBlogPostsCountAsync();
+            totalBlogPosts = await _api.GetBlogPostCountAsync();
         }
         var numblogposts = Math.Min(request.Count, totalBlogPosts - request.StartIndex);
         var blogposts = await _api.GetBlogPostsAsync(numblogposts, request.StartIndex);
 
-        return new ItemsProviderResult<BlogPost>(blogposts, totalBlogPosts);
+        return new ItemsProviderResult<BlogPost>(blogposts ?? new(), totalBlogPosts);
     }
 }
