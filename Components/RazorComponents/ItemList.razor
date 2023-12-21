@@ -21,7 +21,7 @@
     public List<ItemType> Items { get; set; } = new();
 
     [Parameter, EditorRequired]
-    public RenderFragment<ItemType> ItemTemplate { get; set; }
+    public RenderFragment<ItemType> ItemTemplate { get; set; } = default!;
 
     [Parameter]
     public EventCallback<ItemType> DeleteEvent { get; set; }
