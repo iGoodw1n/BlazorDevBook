@@ -6,7 +6,7 @@ namespace BlazorWebAssembly.Server.Endpoints;
 
 public static class CategoryEndpoints
 {
-    public static void MapCategory(this WebApplication app)
+    public static void MapCategoryApi(this WebApplication app)
     {
         app.MapGet("/api/Categories", async (IBlogApi api) =>
         {
@@ -22,11 +22,11 @@ public static class CategoryEndpoints
         {
             await api.DeleteCategoryAsync(id);
             return Results.Ok();
-        });
+        }).RequireAuthorization();
 
         app.MapPut("/api/Categories", async (IBlogApi api, [FromBody] Category item) =>
         {
             return Results.Ok(await api.SaveCategoryAsync(item));
-        });
+        }).RequireAuthorization();
     }
 }
